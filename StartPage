@@ -1,0 +1,35 @@
+void startPage() {
+  int hoveringColor = 255;
+  StartButton Sbtn = new StartButton();
+  
+  background(0,204,204);
+  Sbtn.startButton(hoveringColor);
+  
+  if(Sbtn.isHovering()){
+    hoveringColor = 200;
+    Sbtn.startButton(hoveringColor);
+  }
+  else {
+    hoveringColor = 255;
+    Sbtn.startButton(hoveringColor);
+  }
+}
+
+class StartButton {
+  
+  void startButton(int colorCode) {
+    fill(colorCode);
+    rectMode(CENTER);
+    rect(width/2,height/2+100,300,80,50,50,50,50);
+  }
+  
+  boolean isHovering() {
+    if (mouseX < width/2 + 150 && mouseX > width/2 - 150 && 
+        mouseY > height/2 + 50 && mouseY < height/2 + 150) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+}
