@@ -1,35 +1,23 @@
 void startPage() {
-  int hoveringColor = 255;
-  StartButton Sbtn = new StartButton();
+ 
+  background(#00CCCC);
   
-  background(0,204,204);
-  Sbtn.startButton(hoveringColor);
-  
-  if(Sbtn.isHovering()){
-    hoveringColor = 200;
-    Sbtn.startButton(hoveringColor);
-  }
-  else {
-    hoveringColor = 255;
-    Sbtn.startButton(hoveringColor);
-  }
-}
-
-class StartButton {
-  
-  void startButton(int colorCode) {
-    fill(colorCode);
-    rectMode(CENTER);
-    rect(width/2,height/2+100,300,80,50,50,50,50);
+  //StartButton
+  newButton = new button[3];
+  newButton[0] = new button(width/2-150,height/2+60,300,80);
+  newButton[0].setColor = 240;
+  newButton[0].setText = "START";
+  newButton[0].enable();
+  if (newButton[0].isHovering() && mousePressed == true) {
+    currentScreenNumber = 1;
   }
   
-  boolean isHovering() {
-    if (mouseX < width/2 + 150 && mouseX > width/2 - 150 && 
-        mouseY > height/2 + 50 && mouseY < height/2 + 150) {
-      return true;
-    }
-    else {
-      return false;
-    }
+  //SettingButton
+  newButton[1] = new button(width/2-130, height/2 + 160,260,80);
+  newButton[1].setColor = 240;
+  newButton[1].setText = "SETTINGS";
+  newButton[1].enable();
+  if (newButton[1].isHovering() && mousePressed == true) {
+    currentScreenNumber = 2;
   }
 }
