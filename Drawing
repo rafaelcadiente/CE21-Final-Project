@@ -1,0 +1,13 @@
+int doneChecker=0;
+
+void draw() {
+  stroke(255);
+  if (mousePressed == true && mouseX >=90 && mouseX <= 1024 && mouseY >=90 && mouseY <= 515 && doneChecker == 0) { 
+    line(mouseX, mouseY, pmouseX, pmouseY);
+  }
+ /*
+ Drawing plane: 90<X<1024, 90<Y<515
+ 
+ When the Done button hasn't been pressed or when the timer hasn't run down, doneChecker is equal to zero,
+ so the user can still draw
+ */
