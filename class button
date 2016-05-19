@@ -1,0 +1,49 @@
+class button {
+  
+  int xMark,
+      yMark,
+      buttonWidth,
+      buttonHeight,
+      setColor,
+      setStrokeColor,
+      setEdge,
+      setTransparency = 255;
+  boolean isVisible = true;
+  String setText = " ";
+  PShape buttonShape;
+      
+  button(int xposition, int yposition, int swidth, int sheight, int edge) {
+    xMark = xposition;
+    yMark = yposition;
+    buttonWidth = swidth;
+    buttonHeight = sheight; 
+    setEdge = edge;
+    buttonShape = createShape(RECT,xMark,yMark,buttonWidth,buttonHeight,setEdge,setEdge,setEdge,setEdge);
+  }
+  
+  void draw() {}
+  
+  void enable() {
+    
+    buttonShape.setStroke(color(setStrokeColor, setTransparency));
+    buttonShape.setFill(color(setColor, setTransparency));
+    shape(buttonShape);
+    
+    fill(0);
+    textSize(20);
+    textAlign(CENTER,CENTER);
+    text(setText,xMark,yMark,buttonWidth,buttonHeight);
+  }
+  
+  boolean isHovering() {
+    if (mouseX < xMark + buttonWidth && mouseX > xMark && 
+        mouseY < yMark + buttonHeight && mouseY > yMark) {
+      setStrokeColor = setColor;
+      enable();
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+}
