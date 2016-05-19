@@ -1,0 +1,34 @@
+// Hi Raf. Here are the selectable time buttons:
+void configPage() { // Just replace it with whatever page you're using as a config page
+   background(#00CCCC);
+   
+   //1 Min Button
+   newButton[2] = new button(width/2-150, height/2 + 60, 300, 80, 0);
+   newButton[2].setColor = 240;
+   newButton[2].setText = "60 Seconds";
+   newButton[2].enable();
+   if (newButton[2].isHovering() && mousePressed == true) {
+     selectedTime = 60000;
+     currentScreenNumber = 1; 
+   }
+   
+   //2 Min Button
+   newButton[3] = new button(width/2+151, height/2 + 60, 300, 80, 0);
+   newButton[3].setColor = 240;
+   newButton[3].setText = "90 Seconds";
+   newButton[3].enable();
+   if (newButton[3].isHovering() && mousePressed == true) {
+     selectedTime = 90000;
+     currentScreenNumber = 1; 
+   }
+   
+   //3 Min Button
+   newButton[4] = new button(width/2+302, height/2 + 60, 300, 80, 0);
+   newButton[4].setColor = 240;
+   newButton[4].setText = "120 Seconds";
+   newButton[4].enable();
+   if (newButton[2].isHovering() && mousePressed == true) {
+     selectedTime = 120000;
+     currentScreenNumber = 3; 
+   }
+}
