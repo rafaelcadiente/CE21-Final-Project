@@ -1,0 +1,8 @@
+button[] newButton = new button[5];
+int currentScreenNumber = 69,
+  selectedTime = 0, // Holds value for player's selected time
+  initialTime = 0, // Marks time at start of program
+  startTime = 0, // Marks time at start of game
+  stopTime = 0, // Marks end of game
+  doneChecker = 0; // Checks if time has run out or if player pressed the done button
+boolean running = false;
