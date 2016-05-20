@@ -1,0 +1,22 @@
+PImage img, img2;
+
+void setup () {
+  size (1280,720);
+  background(#00CCCC);
+  img = loadImage("Thinking.png"); // Change these to whatever filenames your pictures are
+  img2 = loadImage("Thinking2.png");
+  howTo();
+}
+
+void howTo () {
+  
+  textSize(28);
+  text("Welcome, players, to \"Write and Draw\"!", 50, 50);
+  text("To start things off, a word will be generated either by the player or by the computer.", 50, 100);
+  text("The player will then try to best to draw the word within the set time limit set before hand.", 50, 150);
+  text("Once that's done, the other players will try their best to guess what word the drawing represents.", 50, 200);
+  text("Have fun :)", 50, 250);
+  
+  image(img, 1280/2, 50);
+  image(img, 1280/2, 250); // Make sure to change the Y value so that the images don't overlap
+}
